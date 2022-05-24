@@ -25,3 +25,38 @@
 “ед”: [“шт.”]
 }
 """
+
+
+def exercise_6():
+
+    item_dict = {"Название": None, "Цена": None, "Количество": None, "Ед. изм": None}
+    analytic_dict = {"Название": [], "Цена": [], "Количество": [], "Ед. изм": []}
+    articles = []
+    i = 0
+    line = '-' * 30
+
+    while True:
+        action = input("\nВведите действия:\n\t'q' Выход\n\t'a' Добавить наименование\n\t"
+                       "'s' Показать все наименования\n\t'i' Показать аналитику: ")
+        if action == 'q':
+            break
+        elif action == 's':
+            for article in articles:
+                print(article)
+        elif action == 'i':
+            print(f'\n\tТекущая аналитика\n{line}')
+            for key, value in analytic_dict.items():
+                value = list(set(value))
+                print(f'{key:>10}: {value}\n{line}')
+        elif action == 'a':
+            i += 1
+            article = item_dict.copy()
+            for key in article.keys():
+                attribute = input(f"Введите аттрибут '{key}': ")
+                article[key] = attribute if (key == 'Название' or key == 'Ед. изм') else int(attribute)
+                analytic_dict[key].append(attribute)
+            articles.append((i, article))
+            print(f'Добавлено наименование № {i}: {article}')
+
+
+exercise_6()

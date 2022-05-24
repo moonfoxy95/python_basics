@@ -14,3 +14,13 @@
 1. раз
 2. перерефриж
 """
+
+
+def exercice_4():
+    user_input = input("Введите несколько слов, разделяя их пробелом: ").split(' ')
+
+    for i, word in enumerate(user_input, 1):
+        print(f'{i}. {word[:10]}')
+
+
+exercice_4()
