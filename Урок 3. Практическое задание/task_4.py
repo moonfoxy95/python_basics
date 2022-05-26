@@ -5,3 +5,19 @@
 ВНИМАНИЕ: использование встроенной функции = задание не принято
 Постараться придумать свой алгоритм без **
 """
+
+
+def my_func(x, y):
+    expected = x**-y
+    print(f'Должно быть: {expected:.5f}')
+
+    denominator = 1
+    i = 0
+    while i < y:
+        i += 1
+        denominator *= x
+    result = 1 / denominator
+    print(f"Получилось: {result:.5f}")
+
+
+my_func(3, 4)
