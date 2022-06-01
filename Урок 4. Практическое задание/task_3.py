@@ -3,3 +3,7 @@
 Необходимо решить задание в одну строку.
 Подсказка: использовать функцию range() и генераторное выражение.
 """
+
+
+my_list = [number for number in range(20, 241) if number % 21 == 0 or number % 20 == 0]
+print(my_list)
