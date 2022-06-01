@@ -12,3 +12,24 @@
 Во втором также необходимо предусмотреть условие,
 при котором повторение элементов списка будет прекращено.
 """
+
+from itertools import count, cycle
+
+first_number = int(input('Input first number: '))
+last_number = int(input('Input last number: '))
+
+for number in count(first_number):
+    if number > last_number:
+        break
+    print(number, end=' ')
+
+
+input_list = [input('Input words (divided by space): ').split()]
+repeats = int(input('Repeats: '))
+
+i = 0
+for word in cycle(input_list):
+    i += 1
+    if i > repeats:
+        break
+    print(word, end=' ')
