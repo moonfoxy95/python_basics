@@ -15,3 +15,23 @@
 
 Проверить работу примера, создав экземпляр и вызвав описанный метод.
 """
+import time
+
+
+class TrafficLight:
+    __color = ''
+
+    def running(self):
+        self.__color = 'красный'
+        print(f"Сейчас горит {self.__color}")
+        time.sleep(7)
+        self.__color = 'желтый'
+        print(f"Сейчас горит {self.__color}")
+        time.sleep(2)
+        self.__color = 'зеленый'
+        print(f"Сейчас горит {self.__color}")
+        time.sleep(4)
+
+
+a = TrafficLight()
+a.running()
